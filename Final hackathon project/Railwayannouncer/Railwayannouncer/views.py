@@ -9,6 +9,7 @@ import time
 import socket
 from .trans import translate_text
 from .announce import speakeng,speakhi,speakmr
+from .nett import is_internet_available
 # from unidecode import unidecode
 
 
@@ -26,15 +27,8 @@ def anounceineng(request):
     english_text = request.GET.get('Text','default').upper()
     print(english_text)
 
-
-    def is_internet_available():
-        try:
-            # Try to connect to a well-known website (in this case, Google's DNS server)
-            socket.create_connection(("8.8.8.8", 53), timeout=3)
-            return True
-        except OSError:
-            return False
-
+    is_internet_available()
+    
     if is_internet_available():
         print("Internet is available. Running code which uses google api.")
     
