@@ -36,10 +36,8 @@ def anounceineng(request):
             return False
 
     if is_internet_available():
-        # Code to run when there is an active internet connection
         print("Internet is available. Running code which uses google api.")
-        # Your code A here
-       
+    
         hindi_text= translate_text(english_text,"hi")
         marathi_text= translate_text(english_text,"mr")
         if hindi_text :
@@ -47,24 +45,9 @@ def anounceineng(request):
         if marathi_text :
             marathi = marathi_text
 
-        # text_to_speak = english_text  # Replace with your desired text
-        # txt = (request.GET.get('text','default'))
-        # print(txt)
         speakeng(english_text, "en")
         speakhi(hindi, "hi")
         speakmr(marathi, "mr")
-
-        # text_to_speak = hindi  # Replace with your desired text
-        # # txt = (request.GET.get('text','default'))
-        # # print(txt)
-        # tts = gTTS(text=text_to_speak, lang='hi')
-        # tts.save('media/speechhi.mp3')
-        
-        # text_to_speak = marathi  # Replace with your desired text
-        # # txt = (request.GET.get('text','default'))
-        # # print(txt)
-        # tts = gTTS(text=text_to_speak, lang='mr')
-        # tts.save('media/speechmr.mp3')
 
         params = {'english':english_text, 'hindi':hindi, 'marathi':marathi}
     else:
@@ -74,9 +57,6 @@ def anounceineng(request):
     return render(request,'anounce.html',params)
 
 
-
-
-# params = {'english':text, 'hindi':hindi, 'marathi':marathi}
         
 
 
