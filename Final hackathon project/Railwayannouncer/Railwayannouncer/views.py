@@ -7,7 +7,7 @@ import os
 import pyttsx3
 import time
 import socket
-from .trans import translate_text
+from .trans import translate_text_eng_api, translate_text_hi_api,translate_text_mr_api
 from .announce import speakeng,speakhi,speakmr
 from .nett import is_internet_available
 # from unidecode import unidecode
@@ -28,12 +28,12 @@ def anounceineng(request):
     print(english_text)
 
     is_internet_available()
-    
+
     if is_internet_available():
         print("Internet is available. Running code which uses google api.")
     
-        hindi_text= translate_text(english_text,"hi")
-        marathi_text= translate_text(english_text,"mr")
+        hindi_text= translate_text_eng_api(english_text,"hi")
+        marathi_text= translate_text_eng_api(english_text,"mr")
         if hindi_text :
             hindi = hindi_text
         if marathi_text :

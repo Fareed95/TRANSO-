@@ -1,6 +1,6 @@
 from googletrans import Translator
 
-def translate_text(text, target_language='en'):
+def translate_text_eng(text, target_language='en'):
     translator = Translator()
     
     try:
