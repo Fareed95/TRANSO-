@@ -1,0 +1,97 @@
+
+ body{
+  background-color: #111214;
+  font-family: 'Roboto Mono', monospace !important;
+  color: white;
+ }
+ .navbar a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+ }
+ .nav-item :hover{
+  color: #6C757D;
+
+ }
+#brand{
+  font-size: 2rem !important;
+  font-weight: 500;
+}
+ section{
+  display: grid;
+  place-items:center;
+  align-content: center;
+  min-height: 100vh;
+ }
+ .hidden{
+  opacity: 0;
+  transition: all 1s ;
+  filter:blur(5px);
+  transform:translateX(-100%)
+
+ }
+ @media(prefers-reduced-motion){
+  .hidden{
+    transition: none;
+  }
+ }
+ .show{
+  opacity: 1;
+  filter:blur(0);
+  transform:translateX(0)
+ }
+ .typer{
+  margin-top: 10rem;
+  display: grid;
+  place-items:center;
+  align-content: center;
+  min-height: 10vh;
+  
+  
+ }
+.typer a{
+  text-decoration: none;
+  color: #6C757D;
+  font-size: 4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main{
+    position: relative;
+    overflow: hidden;
+}
+#page{
+    height: 100vh;
+   
+    background-color: aliceblue;
+}
+#page1{
+    height: 100vh;
+   
+    background-color: rgb(0, 136, 255);
+}
+canvas{
+    height: 100vh;
+
+}
