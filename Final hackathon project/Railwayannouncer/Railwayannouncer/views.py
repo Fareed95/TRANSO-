@@ -13,8 +13,8 @@ from .nett import is_internet_available
 # from unidecode import unidecode
 
 
-def index(request):
-    return render(request,'index.html')
+def main(request):
+    return render(request,'main.html')
 def searchbareng(request):
     return render(request,'searchbareng.html')
 def searchbarhindi(request):

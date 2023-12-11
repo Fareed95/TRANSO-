@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index, name = 'index' ),
+    path('',views.main, name = 'main' ),
     path('searchbareng',views.searchbareng, name= 'searchbareng'),
     path('searchbarhindi',views.searchbarhindi, name= 'searchbarhindi'),
     path('searchbarmarathi',views.searchbarmarathi, name= 'searchbarmarathi'),

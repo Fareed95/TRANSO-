@@ -34,4 +34,6 @@ def translate_text_mr_api(text, target_language='mr'):
     except Exception as e:
         print(f"Translation failed: {e}")
         return None
+    
+
 

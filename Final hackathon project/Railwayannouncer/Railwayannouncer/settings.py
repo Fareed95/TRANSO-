@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Railwayannouncer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,'tempalate'],
+        'DIRS': [BASE_DIR,'template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
