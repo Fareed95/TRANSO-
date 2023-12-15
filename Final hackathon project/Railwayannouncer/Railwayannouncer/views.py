@@ -12,7 +12,6 @@ from .announce import speakeng,speakhi,speakmr
 from .nett import is_internet_available
 # from unidecode import unidecode
 
-
 def main(request):
     return render(request,'main.html')
 def searchbareng(request):

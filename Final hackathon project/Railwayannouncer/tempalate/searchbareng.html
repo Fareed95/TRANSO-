@@ -1,0 +1,103 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <link rel="stylesheet"  href="{%static 'searchbareng.css'%}">
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'black')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('ENGLISH-HINDI', this, 'rgb(39, 55, 77)')" >ENGLISH-HINDI</button>
+<button class="tablink" onclick="openPage('ENGLISH-MARTAHI', this, 'rgb(157,178,191)')">ENGLISH-MARTAHI</button>
+
+
+
+<div id="Home" class="tabcontent">
+    <br>
+    <br>
+    <br>
+    <h1>ENTER A TEXT IN ENGLISH TO ANOUNCE:</h1>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+  <form action="/anounceineng">
+    <input type="search" name = 'Text' id="input" placeholder="ANNOUNCE" required>
+    <button type="submit" ><i class="fa fa-search"></i></button>
+    <a href="javascript:void(0)" id="clear-btn">Clear</a>
+  </form>
+  </div>
+
+<div id="ENGLISH-HINDI" class="tabcontent">
+  <h3>THE TEXT ENTERED IS:-</h3>
+  <p class="eh"></p> 
+</div>
+
+<div id="ENGLISH-MARTAHI" class="tabcontent">
+    <h3>THE TEXT ENTERED IS:-</h3>
+  <p class="em"></p>
+
+
+<!-- <div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+-->
+</div>
+<div>
+  
+</div>
+
+
+
+<script>
+  
+  function openPage(pageName, elmnt, color) {
+    
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    
+    
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+  }
+
+  
+  document.getElementById(pageName).style.display = "block";
+  
+
+  elmnt.style.backgroundColor = color;
+}
+
+document.getElementById("defaultOpen").click();
+
+const trans =(input)=>{
+input.innerHTML =input ;
+console.log(input)
+}
+
+input.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  console.log("key was pressed")
+  trans(input.value)
+  
+})
+
+
+
+const clearInput = () => {
+  const input = document.getElementsByTagName("input")[0];
+  input.value = "";
+}
+
+const clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", clearInput);
+
+</script>
+</body>
+</html>

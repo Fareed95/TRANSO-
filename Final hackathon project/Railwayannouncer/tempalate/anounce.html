@@ -1,0 +1,101 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANOUNCEMENT</title>
+    <style>
+        body {
+            background-color : black;
+            color : white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-image: url(https://e1.pxfuel.com/desktop-wallpaper/461/35/desktop-wallpaper-1180641-black-monochrome-simple-background-minimalism-text-pattern-texture-circle-light-shape-design-line-darkness-screenshot-computer-black-and-white-monochrome-graphy-font-simple.jpg);
+            background-size: cover;
+        }
+
+        header{
+            text-align: center;
+            font-size: 2.5rem;
+            color: rgb(157, 249, 248);
+            text-decoration: underline  white;
+
+        }
+
+        .lang{
+            font-size: 1rem;
+            text-align: center;
+            color: rgb(227, 227, 227);
+        }
+        .audio{
+            text-align: center;
+            
+        }
+        #english {
+            margin: 2rem;
+        }
+        #hindi {
+            margin: 2rem;
+        }
+        #marathi {
+            margin: 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>This is translated & anouncement page  </header>
+    <br>
+    <main>
+        <div class="lang">
+            <h2>
+                English - {{english}}
+            </h2>
+            <br>
+            <h2 lang ="hi">
+                Hindi - {{hindi}}
+            </h2>
+            <br>
+            <h2 lang ="mr">
+                Marathi- {{marathi}}
+            </h2>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="audio">
+            <audio id="english" controls autoplay>
+                <source src="{% static 'media/speecheng.mp3' %}" type="audio/mpeg">
+                <!-- Your browser does not support the audio element. -->
+            </audio>
+            <audio id="hindi" controls >
+                <source src="{% static 'media/speechhi.mp3' %}" type="audio/mpeg">
+                <!-- Your browser does not support the audio element. -->
+            </audio>
+            <audio id="marathi" controls >
+                <source src="{% static 'media/speechmr.mp3' %}" type="audio/mpeg">
+                <!-- Your browser does not support the audio element. -->
+            </audio>
+        </div>
+    </main>
+    <script>
+        var audios = ['english', 'hindi', 'marathi']; // IDs of the audio elements
+        var currentAudioIndex = 0;
+
+        function playNext() {
+            if (currentAudioIndex < audios.length) {
+                var currentAudio = document.getElementById(audios[currentAudioIndex]);
+                currentAudio.play();
+                currentAudioIndex++;
+
+                currentAudio.addEventListener('ended', playNext);
+            } else {
+                currentAudioIndex = 0; // Reset index if reached the end
+            }
+        }
+
+        playNext(); // Start playing the first audio
+    </script>
+
+</body>
+</html>
